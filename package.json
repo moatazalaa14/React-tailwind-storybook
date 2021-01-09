@@ -17,6 +17,11 @@
     "postcss": "^7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "storybook-addon-designs": "^5.4.2",
     "tailwindcss": "2.0.1-compat"
+  },
+  "dependencies": {
+    "@storybook/addon-knobs": "^6.1.11",
+    "@tailwindcss/forms": "^0.2.1"
   }
 }
