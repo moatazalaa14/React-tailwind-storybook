@@ -26,7 +26,7 @@ export const Input = (props) => {
       <label>{label}</label>
       <br />
       <div
-        className={`relative flex ${borderColor} border-2 rounded-md w-64 pl-2 h-10`}
+        className={`relative flex ${borderColor} border-2 rounded-md  pl-2 h-10`}
       >
         {icon==="left"?<div className="w-4 h-fyll flex items-center relative">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,11 +36,11 @@ export const Input = (props) => {
         </div>:null}
         <input
           type={type}
-          className="absolute border-4 w-full outline-none z-40"
+          className="absolute border-4  outline-none z-40 "
           onChange={(e) => setTyping(e.target.value)}
           style={{
             color: `${color}`,
-            width: `${width}px`,
+            width: `90%`,
             height: `${height}px`,
             outline: "2px solid transparent",
             outlineOffset: "2px",
@@ -52,7 +52,7 @@ export const Input = (props) => {
           placeholder={placeholder}
           onClick={handleClick}
         />
-        <div className="absolute flex items-center justify-end pr-6 h-full w-full z-0">
+        <div className="absolute flex items-center justify-end pr-6 h-full  w-full z-0">
           {borderColor === "border-success-shd1" ? (
             <button className="mr-2">
               <svg

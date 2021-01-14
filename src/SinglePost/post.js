@@ -1,7 +1,28 @@
 import React from "react";
-import Img from "./postimage.jpg";
-export const SinglePost = () => {
+// import Img from "./postimage.jpg";
+// import Img2 from "./img2";
+// import Img3 from "./img3";
+// import Img4 from "./img4"
+import {Progress} from "../Progress/progress"
+import {Msg} from "../Misc/msg"
+export const SinglePost = (props) => {
+const images=[
+  {
+    img:Img
+  },
+  {
+    img:Img2
+  },
+  {
+    img:Img3
+  },
+  {
+    img:Img4
+  },
+]
+  const {postStatus} =props
   return (
+    <div>
     <div
       className="relative rounded-t-lg"
       style={{
@@ -10,7 +31,16 @@ export const SinglePost = () => {
       }}
     >
       <div className="rounded-t-lg overflow-hidden">
-        <img src={Img} className="w-full absolute rounded-t-lg h-full" />
+      <div className="absolute z-40 flex justify-center items-center bg-primary-shd7 w-full h-full rounded-t-lg" style={{
+          background: "rgba(237, 232, 252, 0.88)"
+        }}>
+          {postStatus==="uploading"?<div className="w-52 h-3 bg-white z-50 rounded-md">
+            <div className="m-1">
+              <Progress width="40"/>
+            </div>
+          </div>:postStatus==="success"?<div><Msg isSuccess={true}/></div>:postStatus==="error"?<div><Msg /></div>:null}
+        </div>
+        <img src={Img} className="w-full absolute rounded-t-lg h-full z-10" />
       </div>
       <div className="absolute flex justify-end w-full">
         <div className="m-4 w-8 h-8 rounded-full bg-white flex justify-center items-center ">
@@ -28,7 +58,17 @@ export const SinglePost = () => {
           </svg>
         </div>
       </div>
-      <input type="text" placeholder="Type caption (optional)" />
+    </div>
+    <div className="mt-1 border border-grey-shd5 rounded-b-lg h-10 relative" style={{
+        width: "704px",
+      }}>
+        <svg className="absolute z-50 mt-2 ml-2 mr-3 mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#F2F9FF"/>
+<path d="M14.085 14.4023H9.91504L8.97852 17H7.625L11.4258 7.04688H12.5742L16.3818 17H15.0352L14.085 14.4023ZM10.3115 13.3223H13.6953L12 8.66699L10.3115 13.3223Z" fill="#8D9A9E"/>
+</svg>
+
+      <input type="text" placeholder="Type caption (optional)" className="z-10 absolute rounded-b-lg w-full focus:outline-none pt-2 h-full pl-11 pb-3"/>
+    </div>
     </div>
   );
 };

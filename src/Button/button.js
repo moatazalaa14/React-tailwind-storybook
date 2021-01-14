@@ -1,11 +1,11 @@
 import React from "react";
 
 export const Button = (props) => {
-  const {size, withIcon, borderOnly, iconOnly,textOnly} = props;
+  const {size, withIcon, borderOnly, iconOnly,textOnly ,btnText="Button Text"} = props;
   console.log(borderOnly);
   return (
     <button
-      className={`p-2 ${
+      className={`p-2 focus:outline-none ${
         borderOnly&&!textOnly
           ? "border-primary-shd1 border-2 text-primary-shd1"
           : textOnly&&!borderOnly?"text-accent-shd1 focus:underline focus:outline-none":"bg-primary-shd1 text-white"
@@ -21,9 +21,10 @@ export const Button = (props) => {
           : size === "mediuem" && iconOnly
           ? "w-10 h-10"
           : size === "small" && iconOnly
-          ? "w-8 h-8"
+          ? "pl-4 pr-4 h-8"
           : null
       }  rounded-full  font-medium `}
+      disabled
     >
       {withIcon === "right" || iconOnly ? (
         <svg
@@ -40,7 +41,7 @@ export const Button = (props) => {
           />
         </svg>
       ) : null}
-      {iconOnly ? null : "Button Text"}
+      {iconOnly ? null : btnText}
       {withIcon === "left" && !iconOnly ? (
         <svg
           width={`${iconOnly ? 15 : size === "large" ? 12 : 8}`}

@@ -10,8 +10,8 @@ export const Tab = (props) => {
     <div
       // onClick={handlingToggling}
       className={`w-36 h-8 rounded-full flex ${
-        isToggled||isTrue ? "border-grey border" : null
-      } justify-center items-center cursor-pointer`}
+        isToggled||isTrue ? "border-grey border" : "bg-grey-bg"
+      } justify-center items-center cursor-pointer mr-2`}
     >
       <div>
         <Radio size="small" isTrue={isToggled ||isTrue ? true : false} />

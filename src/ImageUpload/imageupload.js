@@ -3,9 +3,7 @@ import React from "react";
 export const ImageUpload = () => {
   return (
     <form>
-      <div className="h-14 bg-grey-shd7 rounded-md border-dashed border-accent border flex justify-center items-center cursor-pointer" style={{
-          width:"704px"
-      }}>
+      <div className="h-14 bg-grey-shd7 rounded-md border-dashed border-accent border flex justify-center items-center cursor-pointer">
            <svg
             width="15"
             height="13"
