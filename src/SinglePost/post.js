@@ -1,25 +1,12 @@
 import React from "react";
 // import Img from "./postimage.jpg";
-// import Img2 from "./img2";
+import Img from "./img2.jpg";
 // import Img3 from "./img3";
 // import Img4 from "./img4"
 import {Progress} from "../Progress/progress"
 import {Msg} from "../Misc/msg"
 export const SinglePost = (props) => {
-const images=[
-  {
-    img:Img
-  },
-  {
-    img:Img2
-  },
-  {
-    img:Img3
-  },
-  {
-    img:Img4
-  },
-]
+
   const {postStatus} =props
   return (
     <div>

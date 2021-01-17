@@ -9,6 +9,13 @@ export default{
         width: { 
             control: { type: 'range', min: 0, max: 56, step: 4 },
         },
+        isVoting:{control:"boolean"},
+        status:{
+        control: {
+          type: 'inline-radio',
+          options: ['upload', 'vote'],
+        },
+      }
     }
 }
 
